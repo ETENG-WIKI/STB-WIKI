@@ -1,3 +1,4 @@
-# simple
+# STB-WIKI
 
-Wiki 示例空白仓库，直接 `fork` 该仓库然后填充内容即可。
+STATIC-HIML-BIULDER 使用教程
+
