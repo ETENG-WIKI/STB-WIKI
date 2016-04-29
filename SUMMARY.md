@@ -7,4 +7,6 @@
 * [推荐模块](docs/recommend.md)
 * [手机应用打包帮助](docs/cordova.md)
 * [版本历史](docs/release.md)
+* [更多](docs/moreinfo.md)
+* [联系我们](docs/contact.md)
 
