@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>高级技巧 - STB 使用教程</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "高级技巧";
+    var mkdocs_page_input_path = "advenced.md";
+    var mkdocs_page_url = "/advenced/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> STB 使用教程</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../getting-started/">开始使用</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../tutorial/">教程</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">高级技巧</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#ngresource-restful-api">使用 ngResource 封装 RESTFul API</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../recommend/">推荐模块</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../cordova/">手机应用打包帮助</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../deploy/">前端应用发布</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../release/">版本历史</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../moreinfo/">更多</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../contact/">联系我们</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">STB 使用教程</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>高级技巧</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="ngresource-restful-api">使用 ngResource 封装 RESTFul API</h2>
+<p>我们通常不使用 Controller 直接调用 HTTP 请求，而是把这些请求通过 Service 封装后使用。这么做的好处是：</p>
+<ul>
+<li>可以在多个地方重复使用</li>
+<li>分离关注点，Controller 放置用户交互的逻辑，Service 放置与界面无关的逻辑</li>
+</ul>
+<p>基本的做法是：</p>
+<pre><code class="javascript">angular.module('app').service('Message', MessageService);
+
+// @ngInject
+function MessageService($http, $q) {
+
+  this.getAll = function () {
+    var deferred = $q.defer();
+    $http.get('/api/messages')
+      .success(deferred.resolve)
+      .error(deferred.reject);
+    return deferred.promise;
+  };
+
+  this.getById = function (id) {
+    var deferred = $q.defer();
+    $http.get('/api/messages/' + id)
+      .success(deferred.resolve)
+      .error(deferred.reject);
+    return deferred.promise;
+  };
+
+}
+</code></pre>
+
+<p>使用方法是：</p>
+<pre><code class="javascript">angular.module('app').controller('PageController', PageController);
+
+// @ngInject
+function PageController(Message) {
+
+  var vm = this;
+
+  load();
+
+  function load() {
+    Message.getAll().then(function (messages) {
+      vm.messages = messages;
+    });
+  }
+}
+</code></pre>
+
+<p>这么做每次都要写大量增删改查的代码，很麻烦。更好的做法是使用 ngResource 代替自己写的 Service，好处是：</p>
+<ul>
+<li>基本增删改查自动生成，无需编写额外的代码</li>
+<li>自动解决 Promise，更直观</li>
+</ul>
+<p>使用之前先将 ngResource 安装好，并加入依赖：</p>
+<pre><code class="bash">bower install --save angular-resource
+</code></pre>
+
+<p>Service 编写方法为：</p>
+<pre><code class="javascript">angular.module('app').factory('Message', MessageFactory);
+
+// @ngInject
+function MessageFactory($resource) {
+
+  return $resource('/api/messages', {}, {});
+
+}
+</code></pre>
+
+<p>使用方法为：</p>
+<pre><code class="javascript">angular.module('app').controller('PageController', PageController);
+
+// @ngInject
+function PageController(Message) {
+
+  var vm = this;
+
+  load();
+
+  function load() {
+    vm.messages = Message.query();
+  }
+
+}
+</code></pre>
+
+<p>更详细的写法请参考官方文档：<a href="http://docs.angularjs.cn/api/ngResource/service/$resource">angular-resource</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../recommend/" class="btn btn-neutral float-right" title="推荐模块">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../tutorial/" class="btn btn-neutral" title="教程"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../tutorial/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../recommend/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
