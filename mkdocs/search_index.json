@@ -167,18 +167,28 @@
         }, 
         {
             "location": "/deploy/", 
-            "text": "\u914d\u7f6e\n\n\n\u4fee\u6539tasks\u76ee\u5f55\ntest-deploy.json\n | \nproduction-deploy.json\n\n\n{\n  \nhost\n: \n192.168.0.53\n,--\u8fdc\u7a0b\u4e3b\u673a\u540d\n  \nusername\n: \nroot\n,--\u7528\u6237\u540d\n  \npassword\n: \n******\n,--\u5bc6\u7801\n  \npath\n: \n/opt/buildapp/tmp/\n--\u53d1\u5e03\u76ee\u5f55\n}\n\n\n\n\n\n\u53d1\u5e03\n\n\ngrunt localDeploy --\u53d1\u5e03\u5e94\u7528\u5230\u672c\u5730\u6d4b\u8bd5\u73af\u5883\ngrunt productDeploy --\u53d1\u5e03\u5e94\u7528\u5230\u6b63\u5f0f\u73af\u5883", 
+            "text": "\u914d\u7f6e\n\n\n\u4fee\u6539tasks\u76ee\u5f55\ntest-deploy.json | production-deploy.json\n\n\n{\n  \"host\": \"192.168.0.53\",--\u8fdc\u7a0b\u4e3b\u673a\u540d\n  \"username\": \"root\",--\u7528\u6237\u540d\n  \"password\": \"******\",--\u5bc6\u7801\n  \"path\": \"/opt/buildapp/tmp/\"--\u53d1\u5e03\u76ee\u5f55\n}\n\n\n\n\u53d1\u5e03\n\n\ngrunt localDeploy --\u53d1\u5e03\u5e94\u7528\u5230\u672c\u5730\u6d4b\u8bd5\u73af\u5883\ngrunt productDeploy --\u53d1\u5e03\u5e94\u7528\u5230\u6b63\u5f0f\u73af\u5883", 
             "title": "\u524d\u7aef\u5e94\u7528\u53d1\u5e03"
         }, 
         {
             "location": "/deploy/#_1", 
-            "text": "\u4fee\u6539tasks\u76ee\u5f55 test-deploy.json  |  production-deploy.json  {\n   host :  192.168.0.53 ,--\u8fdc\u7a0b\u4e3b\u673a\u540d\n   username :  root ,--\u7528\u6237\u540d\n   password :  ****** ,--\u5bc6\u7801\n   path :  /opt/buildapp/tmp/ --\u53d1\u5e03\u76ee\u5f55\n}", 
+            "text": "\u4fee\u6539tasks\u76ee\u5f55 test-deploy.json | production-deploy.json  {\n  \"host\": \"192.168.0.53\",--\u8fdc\u7a0b\u4e3b\u673a\u540d\n  \"username\": \"root\",--\u7528\u6237\u540d\n  \"password\": \"******\",--\u5bc6\u7801\n  \"path\": \"/opt/buildapp/tmp/\"--\u53d1\u5e03\u76ee\u5f55\n}", 
             "title": "\u914d\u7f6e"
         }, 
         {
             "location": "/deploy/#_2", 
             "text": "grunt localDeploy --\u53d1\u5e03\u5e94\u7528\u5230\u672c\u5730\u6d4b\u8bd5\u73af\u5883\ngrunt productDeploy --\u53d1\u5e03\u5e94\u7528\u5230\u6b63\u5f0f\u73af\u5883", 
             "title": "\u53d1\u5e03"
+        }, 
+        {
+            "location": "/updateport/", 
+            "text": "\u4fee\u6539static-html-builder\u542f\u52a8\u7aef\u53e3\u53f7\n\n\ntasks\\connect.js\noptions: {\n  port: 9000 //\u542f\u52a8\u7aef\u53e3\n}, \ndev: {\n      options: {\n        livereload: true,//\u7aef\u53e3\u53f7\n        middleware: require('../lib/middleware')\n      }\n    }\n\ntasks\\watch.js\n dev: {\n      files: '\n%= config.app %\n/**/*.*',\n      options: {\n        livereload: true //\u7aef\u53e3\u53f7\n      }\n    }", 
+            "title": "\u542f\u52a8\u7aef\u53e3\u4fee\u6539"
+        }, 
+        {
+            "location": "/updateport/#static-html-builder", 
+            "text": "tasks\\connect.js\noptions: {\n  port: 9000 //\u542f\u52a8\u7aef\u53e3\n}, \ndev: {\n      options: {\n        livereload: true,//\u7aef\u53e3\u53f7\n        middleware: require('../lib/middleware')\n      }\n    }\n\ntasks\\watch.js\n dev: {\n      files: ' %= config.app % /**/*.*',\n      options: {\n        livereload: true //\u7aef\u53e3\u53f7\n      }\n    }", 
+            "title": "\u4fee\u6539static-html-builder\u542f\u52a8\u7aef\u53e3\u53f7"
         }, 
         {
             "location": "/release/", 

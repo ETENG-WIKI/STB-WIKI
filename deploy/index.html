@@ -115,6 +115,13 @@
           
             <li>
     <li class="toctree-l1 ">
+        <a class="" href="../updateport/">启动端口修改</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
         <a class="" href="../release/">版本历史</a>
         
     </li>
@@ -166,18 +173,16 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="_1">配置</h2>
-<p>修改tasks目录<strong>test-deploy.json</strong> | <strong>production-deploy.json</strong></p>
+                <h1 id="_1">配置</h1>
+<p>修改tasks目录<strong>test-deploy.json | production-deploy.json</strong></p>
 <pre><code>{
-  &quot;host&quot;: &quot;192.168.0.53&quot;,--远程主机名
-  &quot;username&quot;: &quot;root&quot;,--用户名
-  &quot;password&quot;: &quot;******&quot;,--密码
-  &quot;path&quot;: &quot;/opt/buildapp/tmp/&quot;--发布目录
+  "host": "192.168.0.53",--远程主机名
+  "username": "root",--用户名
+  "password": "******",--密码
+  "path": "/opt/buildapp/tmp/"--发布目录
 }
-
 </code></pre>
-
-<h2 id="_2">发布</h2>
+<h1 id="_2">发布</h1>
 <pre><code>grunt localDeploy --发布应用到本地测试环境
 grunt productDeploy --发布应用到正式环境
 </code></pre>
@@ -188,7 +193,7 @@ grunt productDeploy --发布应用到正式环境
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../release/" class="btn btn-neutral float-right" title="版本历史">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../updateport/" class="btn btn-neutral float-right" title="启动端口修改">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../cordova/" class="btn btn-neutral" title="手机应用打包帮助"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -220,7 +225,7 @@ grunt productDeploy --发布应用到正式环境
         <span><a href="../cordova/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../release/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../updateport/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

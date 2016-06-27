@@ -8,7 +8,7 @@
   
   
   
-  <title>版本历史 - STB 使用教程</title>
+  <title>启动端口修改 - STB 使用教程</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -23,9 +23,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "版本历史";
-    var mkdocs_page_input_path = "release.md";
-    var mkdocs_page_url = "/release/";
+    var mkdocs_page_name = "启动端口修改";
+    var mkdocs_page_input_path = "updateport.md";
+    var mkdocs_page_url = "/updateport/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -104,38 +104,22 @@
 <li>
           
             <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../updateport/">启动端口修改</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">启动端口修改</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#static-html-builder">修改static-html-builder启动端口号</a></li>
+                
+            
+            </ul>
         
     </li>
 <li>
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">版本历史</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#_1">版本历史</a></li>
-                
-                    <li><a class="toctree-l4" href="#314-2015-07-31">3.1.4 (2015-07-31)</a></li>
-                
-                    <li><a class="toctree-l4" href="#313-2015-06-08">3.1.3 (2015-06-08)</a></li>
-                
-                    <li><a class="toctree-l4" href="#312-2015-05-07">3.1.2 (2015-05-07)</a></li>
-                
-                    <li><a class="toctree-l4" href="#311-2015-04-29">3.1.1 (2015-04-29)</a></li>
-                
-                    <li><a class="toctree-l4" href="#310-2015-04-08">3.1.0 (2015-04-08)</a></li>
-                
-                    <li><a class="toctree-l4" href="#303-2015-03-14">3.0.3 (2015-03-14)</a></li>
-                
-                    <li><a class="toctree-l4" href="#302">3.0.2</a></li>
-                
-                    <li><a class="toctree-l4" href="#301-2015-02-03">3.0.1 (2015-02-03)</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../release/">版本历史</a>
         
     </li>
 <li>
@@ -176,7 +160,7 @@
     
       
     
-    <li>版本历史</li>
+    <li>启动端口修改</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -186,68 +170,26 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="_1">版本历史</h1>
-<h2 id="314-2015-07-31">3.1.4 (2015-07-31)</h2>
-<ul>
-<li>可自由选择 AngularJS 1.4.x 或 AngularJS 1.3.x</li>
-</ul>
-<h2 id="313-2015-06-08">3.1.3 (2015-06-08)</h2>
-<ul>
-<li>更新 AngularJS 到 1.4.x</li>
-</ul>
-<h2 id="312-2015-05-07">3.1.2 (2015-05-07)</h2>
-<ul>
-<li>修正 Windows 下模板整合时出现的路径问题</li>
-</ul>
-<h2 id="311-2015-04-29">3.1.1 (2015-04-29)</h2>
-<ul>
-<li>自动压缩 html 片段，减小下载量</li>
-<li>html 片段编译时加入 index.html，减小首次加载延迟</li>
-<li>模板加载优化</li>
-<li>更新 grunt-filerev 到 2.3.1</li>
-<li>更新 http-proxy 到 1.11.1</li>
-</ul>
-<h2 id="310-2015-04-08">3.1.0 (2015-04-08)</h2>
-<ul>
-<li>加入 filerev，在每次编译后为文件名加入版本号，保证应用更新后刷新缓存</li>
-<li>加入 ng-annotate，允许使用 <code>// @ngInject</code> 自动注入依赖</li>
-<li>整合脚本时，自动加入闭包，防止污染全局命名空间</li>
-<li>编译后自动加入严格模式标志 <code>'use strict';</code></li>
-<li>支持 svg 图片</li>
-<li>初始化项目时，自动生成主模块</li>
-<li>更换 template 脚本到标准 grunt-template 模块</li>
-<li>更换 bower install 脚本到标准 grunt-shell 模块</li>
-<li>升级 grunt-contrib-concat 到 0.5.1</li>
-<li>升级 http-proxy 到 1.10.1</li>
-<li>去除内置 tutorial 文档支持代码</li>
-</ul>
-<h2 id="303-2015-03-14">3.0.3 (2015-03-14)</h2>
-<ul>
-<li>修正路由切换后滚动条未重置的问题</li>
-</ul>
-<h2 id="302">3.0.2</h2>
-<ul>
-<li>修正 project.json 无法修改 HTML 内容问题</li>
-<li>修正 grunt install 无法运行问题</li>
-<li>修正 less 中 url 引用的路径问题</li>
-<li>升级 angular 到 1.3.x</li>
-<li>移除内置的 tutorial</li>
-<li>精简</li>
-</ul>
-<h2 id="301-2015-02-03">3.0.1 (2015-02-03)</h2>
-<ul>
-<li>加入 mkdocs 文档，在线文档地址为 http://gengen1988.github.io/static-html-builder/</li>
-<li>移除对 ngRoute 的引用，允许自由选用路由模块</li>
-<li>加入对 ui.router 的支持</li>
-<li>project.json 中，加入 main，用于指定入口模块</li>
-<li>project.json 中，加入 name，用于指定 HTML title</li>
-<li>project.json 中，bowerDependencies 更名为 dependencies</li>
-<li>project.json 中，bowerOverrides 更名为 overrides</li>
-<li>project.json 中，移除 angularModules，将 Angular 依赖放入应用中配置</li>
-<li>project.json 中，移除 tutorial，使用 docs 代替</li>
-<li>project.json 中，加入默认配置项</li>
-<li>重构 grunt tasks，移除未使用的任务</li>
-</ul>
+                <h1 id="static-html-builder">修改static-html-builder启动端口号</h1>
+<pre><code>tasks\connect.js
+options: {
+  port: 9000 //启动端口
+}, 
+dev: {
+      options: {
+        livereload: true,//端口号
+        middleware: require('../lib/middleware')
+      }
+    }
+
+tasks\watch.js
+ dev: {
+      files: '&lt;%= config.app %&gt;/**/*.*',
+      options: {
+        livereload: true //端口号
+      }
+    }
+</code></pre>
               
             </div>
           </div>
@@ -255,10 +197,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../moreinfo/" class="btn btn-neutral float-right" title="更多">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../release/" class="btn btn-neutral float-right" title="版本历史">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../updateport/" class="btn btn-neutral" title="启动端口修改"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../deploy/" class="btn btn-neutral" title="前端应用发布"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -284,10 +226,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../updateport/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../deploy/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../moreinfo/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../release/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
