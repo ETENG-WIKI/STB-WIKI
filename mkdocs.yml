@@ -1,6 +1,7 @@
 site_name: STB 使用教程
 pages:
-- Home: index.md
+- 环境搭建: buildenv.md
+- 介绍: index.md
 - 开始使用: getting-started.md
 - 教程: tutorial.md
 - 高级技巧: advenced.md
