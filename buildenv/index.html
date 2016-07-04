@@ -8,7 +8,7 @@
   
   
   
-  <title>前端应用发布 - STB 使用教程</title>
+  <title>环境搭建 - STB 使用教程</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -23,9 +23,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "前端应用发布";
-    var mkdocs_page_input_path = "deploy.md";
-    var mkdocs_page_url = "/deploy/";
+    var mkdocs_page_name = "环境搭建";
+    var mkdocs_page_input_path = "buildenv.md";
+    var mkdocs_page_url = "/buildenv/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -43,7 +43,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="../buildenv/" class="icon icon-home"> STB 使用教程</a>
+        <a href="./" class="icon icon-home"> STB 使用教程</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -55,8 +55,17 @@
         <ul class="current">
           
             <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../buildenv/">环境搭建</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">环境搭建</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#_1">前台开发环境搭建</a></li>
+                
+                    <li><a class="toctree-l4" href="#_2">建议以下软件安装最新版</a></li>
+                
+            
+            </ul>
         
     </li>
 <li>
@@ -104,18 +113,8 @@
 <li>
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">前端应用发布</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#_1">配置</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#_2">发布</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../deploy/">前端应用发布</a>
         
     </li>
 <li>
@@ -158,7 +157,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../buildenv/">STB 使用教程</a>
+        <a href="./">STB 使用教程</a>
       </nav>
 
       
@@ -166,11 +165,11 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../buildenv/">Docs</a> &raquo;</li>
+    <li><a href="./">Docs</a> &raquo;</li>
     
       
     
-    <li>前端应用发布</li>
+    <li>环境搭建</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -180,19 +179,34 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="_1">配置</h1>
-<p>修改tasks目录<strong>test-deploy.json | production-deploy.json</strong></p>
-<pre><code>{
-  "host": "192.168.0.53",--远程主机名
-  "username": "root",--用户名
-  "password": "******",--密码
-  "path": "/opt/buildapp/tmp/"--发布目录
-}
+                <h1 id="_1">前台开发环境搭建</h1>
+<h2 id="_2">建议以下软件安装最新版</h2>
+<ol>
+<li>
+<p>安装nodejs</p>
+<p>下载地址：https://nodejs.org/en/</p>
+</li>
+<li>
+<p>安装git(版本控制工具)</p>
+<p>下载地址：https://git-scm.com/
+<img alt="" src="http://i.imgur.com/V2vVZ5w.png" />
+<img alt="" src="http://i.imgur.com/otIfBWz.png" /></p>
+</li>
+<li>
+<p>安装bowe(前台包管理器)</p>
+<p>安装方法：</p>
+<pre><code>windows:npm install -g bower
+linux:  sudo npm install -g bower
 </code></pre>
-<h1 id="_2">发布</h1>
-<pre><code>grunt localDeploy --发布应用到本地测试环境
-grunt productDeploy --发布应用到正式环境
+<ol>
+<li>安装grunt-cli(构建编译工具)</li>
+</ol>
+<p>安装方法:</p>
+<pre><code>windows: npm install -g grunt-cli
+linux:  sudo npm install -g grunt-cli
 </code></pre>
+</li>
+</ol>
               
             </div>
           </div>
@@ -200,10 +214,8 @@ grunt productDeploy --发布应用到正式环境
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../updateport/" class="btn btn-neutral float-right" title="启动端口修改">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href=".." class="btn btn-neutral float-right" title="介绍">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../cordova/" class="btn btn-neutral" title="手机应用打包帮助"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -229,10 +241,8 @@ grunt productDeploy --发布应用到正式环境
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../cordova/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../updateport/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href=".." style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
