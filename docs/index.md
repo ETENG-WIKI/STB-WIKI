@@ -20,7 +20,7 @@ __Static HTML Builder__
 
 执行以下命令：
 ```bash
-git clone https://github.com/ETENG-OSP/static-html-builder.git
+git clone https://github.com/ETENG-WIKI/static-html-builder.git
 cd static-html-builder
 npm install
 ```
